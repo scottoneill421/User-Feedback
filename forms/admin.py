@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import SubmittedForm
+from .models import FeedbackFormModel
 
-class SubmittedFormAdmin(admin.ModelAdmin):
+class FeedbackFormModelAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(SubmittedForm, SubmittedFormAdmin)
+admin.site.register(FeedbackFormModel, FeedbackFormModelAdmin)
