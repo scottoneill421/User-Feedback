@@ -1,5 +1,9 @@
-<h1>FEEDBACK FORM</h1>
-<form method="POST">{% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Submit">
-</form>
+{% extends '_base.html' %}
+
+{% block content %}
+  <h2>Feedback Form</h2>
+  <form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
