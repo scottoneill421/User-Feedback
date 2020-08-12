@@ -1,18 +1,16 @@
 from django.http import HttpResponseRedirect
 
-from django.views.generic.edit import FormView
-from django.views.generic.base import TemplateView
+from django.views.generic import CreateView, TemplateView
+
 
 from .forms import FeedbackForm
+from .models import FeedbackFormModel
 
-class FeedbackFormView(FormView):
+class FeedbackFormView(CreateView):
+    model = FeedbackFormModel
     template_name = 'FeedbackForm.html'
     form_class = FeedbackForm
     success_url = "/thanks/"
-
-    def form_valid(self, form):
-        form.instance.save()
-        return HttpResponseRedirect(self.success_url)
 
 
 class ThanksView(TemplateView):
